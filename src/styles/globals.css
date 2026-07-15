@@ -1,0 +1,278 @@
+/* ===== CSS Variables ===== */
+:root {
+  --bg: #06090f;
+  --bg-elevated: #080c14;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(230, 184, 92, 0.35);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --muted-dim: #5b6a82;
+  --accent: #e6b85c;
+  --accent-2: #f5d68a;
+  --glow: rgba(230, 184, 92, 0.25);
+  --glow-strong: rgba(230, 184, 92, 0.45);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--glow);
+  color: var(--accent-2);
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(230, 184, 92, 0.25); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(230, 184, 92, 0.45); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Layout Helpers ===== */
+.container-x {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  position: relative;
+  padding: 140px 0;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 90px 0; }
+}
+
+/* ===== Typography Helpers ===== */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Shared Card ===== */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s, box-shadow 0.35s, background 0.35s;
+  position: relative;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--glow);
+  background: var(--card-hover);
+}
+
+/* ===== Shared Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 13px 26px;
+  border-radius: 10px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.25s, background 0.25s, border-color 0.25s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0a0d14;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -8px var(--glow-strong);
+}
+
+.btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--border-hover);
+  background: rgba(230, 184, 92, 0.06);
+  transform: translateY(-3px);
+}
+
+.btn-ghost:active { transform: translateY(-1px) scale(0.98); }
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 13px;
+}
+
+/* ===== Shared Chip ===== */
+.stack-chip {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  padding: 5px 11px;
+  border-radius: 7px;
+  background: rgba(230, 184, 92, 0.06);
+  border: 1px solid rgba(230, 184, 92, 0.18);
+  color: var(--accent-2);
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.1); }
+}
+
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, -6%) scale(1.08); }
+}
+
+@keyframes spin-fwd {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fade-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes particle-drift {
+  0% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(-40px); }
+  100% { opacity: 0; transform: translateY(-80px); }
+}
+
+@keyframes badge-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(230, 184, 92, 0.4); }
+  70% { box-shadow: 0 0 0 7px rgba(230, 184, 92, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 184, 92, 0); }
+}
