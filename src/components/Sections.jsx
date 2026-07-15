@@ -51,7 +51,7 @@ export function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="eyebrow">// 01 — about</div>
+            <div className="eyebrow">{/* 01 — About */}</div>
             <h2 className="section-title">
               Passionate about<br />building &amp; <span className="gold-text">solving</span>
             </h2>
@@ -107,7 +107,7 @@ export function Experience() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow">// 02 — experience</div>
+          <div className="eyebrow">{/*02 — Experience */}</div>
           <h2 className="section-title">Where I've worked</h2>
           <p className="section-sub" style={{ marginBottom: '50px' }}>
             Hands-on roles building real backend systems and shipping production code.
@@ -188,7 +188,7 @@ export function Projects() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow">// 03 — projects</div>
+          <div className="eyebrow">{/*03 — Projects*/}</div>
           <h2 className="section-title">Things I've built</h2>
           <p className="section-sub" style={{ marginBottom: '50px' }}>
             A selection of backend-first and full-stack projects, from REST APIs to applied ML.
@@ -213,7 +213,7 @@ export function TechStack() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow">// 04 — stack</div>
+          <div className="eyebrow">{/*04 — Stack*/}</div>
           <h2 className="section-title">Tools of the trade</h2>
           <p className="section-sub" style={{ marginBottom: '50px' }}>
             The languages, frameworks, and tools I reach for most.
@@ -281,7 +281,7 @@ export function Certificates() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow">// 05 — certificates</div>
+          <div className="eyebrow">{/*05 — Certificates*/}</div>
           <h2 className="section-title">Credentials</h2>
           <p className="section-sub" style={{ marginBottom: '50px' }}>Click any card to preview.</p>
         </motion.div>
@@ -325,7 +325,7 @@ export function Learning() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow">// 06 — currently learning</div>
+          <div className="eyebrow">{/*06 — Currently learning*/}</div>
           <h2 className="section-title learning-title">Sharpening the saw</h2>
         </motion.div>
 
@@ -370,7 +370,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: '50px' }}
         >
-          <div className="eyebrow" style={{ justifyContent: 'center' }}>// 07 — contact</div>
+          <div className="eyebrow" style={{ justifyContent: 'center' }}>{/*07 — Contact*/}</div>
           <h2 className="section-title">Let's build something</h2>
           <p className="section-sub" style={{ margin: '0 auto' }}>
             Open to full-time roles and internships. Reach out — I usually reply within a day.
