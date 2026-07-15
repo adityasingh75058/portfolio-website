@@ -1,91 +1,187 @@
-# Aditya Singh — Portfolio (React Project)
+# Aditya Singh Portfolio
 
-A clean, component-based React portfolio converted from the original single-file `index.html`.
+This repository contains the source code for my personal portfolio website built with React. It showcases my projects, technical skills, certifications, and experience as a software developer. The portfolio is designed to be fast, responsive, and easy to maintain.
+
+## Live Website
+
+Portfolio: https://portfolio-website-puce-phi-70.vercel.app/
+
+## About the Project
+
+The purpose of this portfolio is to present my work and provide a central place where recruiters, hiring managers, and fellow developers can learn more about me.
+
+The application follows a component-based architecture using React and is structured to make future updates simple. Most portfolio content can be modified without changing the UI components.
+
+## Features
+
+* Responsive design for desktop, tablet, and mobile devices
+* Modern and clean user interface
+* Interactive landing section
+* About Me section
+* Skills and technology stack
+* Experience timeline
+* Featured projects
+* Certifications
+* Currently learning section
+* Contact section with social links
+* Smooth scrolling and simple animations
+* Easy content management
+
+## Tech Stack
+
+**Frontend**
+
+* React.js
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+
+**Development Tools**
+
+* Git
+* GitHub
+* VS Code
+* Vercel
 
 ## Project Structure
 
-```
+```text
 aditya-portfolio/
-├── public/
-│   └── index.html              ← HTML shell + font imports
-├── src/
-│   ├── index.js                ← React entry point
-│   ├── App.jsx                 ← Root component (composes all sections)
-│   │
-│   ├── data/
-│   │   └── index.js            ← All portfolio content (edit here!)
-│   │
-│   ├── hooks/
-│   │   └── index.js            ← useActiveSection, useCountUp, useInView, useFadeIn
-│   │
-│   ├── components/
-│   │   ├── motion.js           ← Lightweight framer-motion shim (no extra deps)
-│   │   ├── Background.jsx/.css ← Animated gradient + particle field
-│   │   ├── Navbar.jsx/.css     ← Sticky nav with mobile menu
-│   │   ├── Hero.jsx/.css       ← Hero section with typing animation + orbital visual
-│   │   └── Sections.jsx/.css   ← Stats, About, Experience, Projects, TechStack,
-│   │                               Certificates, Learning, Contact, Footer, ScrollTop
-│   │
-│   └── styles/
-│       └── globals.css         ← CSS variables, reset, layout helpers, keyframes
 │
-└── package.json
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── hooks/
+│   ├── styles/
+│   ├── App.jsx
+│   └── index.js
+│
+├── package.json
+└── README.md
 ```
 
-## Quick Start
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/adityasingh75058/portfolio-website.git
+```
+
+Move into the project directory:
+
+```bash
+cd portfolio-website
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm start
 ```
 
-Opens at http://localhost:3000
+The application will be available at:
+
+```text
+http://localhost:3000
+```
 
 ## Build for Production
+
+To create an optimized production build:
 
 ```bash
 npm run build
 ```
 
-Outputs optimized files to `build/`.
+The production-ready files will be generated inside the `build` directory.
 
-## Customizing Content
+## Updating Portfolio Content
 
-All portfolio data lives in **`src/data/index.js`** — edit that one file to update:
+Most of the portfolio information is stored in:
 
-- Hero roles (typing animation)
-- Stats counters
-- Experience timeline
-- Projects (name, description, GitHub/demo links, tech stack)
-- Tech stack grid
-- Certificates
-- Currently learning chips
-- Contact info (phone, email, LinkedIn, GitHub)
+```text
+src/data/index.js
+```
 
-## Deploying
+From there, you can update:
 
-### Vercel (recommended)
-1. Push to a GitHub repo
-2. Import on vercel.com → auto-detected as Create React App → deploy
+* Personal information
+* Skills
+* Projects
+* Experience
+* Certifications
+* Social links
+* Contact details
 
-### Netlify
-Drag the `build/` folder onto app.netlify.com/drop
+without modifying the UI components.
+
+## Deployment
+
+This project can be deployed on any static hosting platform.
+
+### Vercel
+
+1. Push the repository to GitHub.
+2. Import the repository into Vercel.
+3. Deploy using the default Create React App configuration.
 
 ### GitHub Pages
+
+Install the deployment package:
+
 ```bash
 npm install --save-dev gh-pages
-# Add "homepage": "https://<user>.github.io/<repo>" to package.json
-# Add "predeploy": "npm run build" and "deploy": "gh-pages -d build" to scripts
+```
+
+Update `package.json`:
+
+```json
+"homepage": "https://adityasingh75058.github.io/portfolio-website"
+```
+
+Add the following scripts:
+
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+```
+
+Deploy the project:
+
+```bash
 npm run deploy
 ```
 
-## Before Deploying
+## Future Improvements
 
-- **Resume**: Place `Aditya_Singh_Resume.pdf` in the `public/` folder
-- **Contact form**: Wire up to [Formspree](https://formspree.io) or [Web3Forms](https://web3forms.com)
-- **Certificate images**: Add images to `public/` and reference them in the certificates data
+* Dark and light theme toggle
+* Blog section
+* Project filtering
+* Resume preview
+* Contact form with backend integration
+* Performance optimization
+* Accessibility improvements
 
-## Dependencies
+## Contact
 
-Only React 18 — no animation library required. The motion shim in `src/components/motion.js`
-handles all transitions using CSS + IntersectionObserver.
+**Aditya Singh**
+
+GitHub: https://github.com/adityasingh75058
+
+LinkedIn: https://www.linkedin.com/in/contact-aditya-singh75/
+
+Email: adityasingh75058@gmail.com
+
+---
+
+If you have any suggestions or feedback about this project, feel free to connect with me on LinkedIn or open an issue in this repository.
